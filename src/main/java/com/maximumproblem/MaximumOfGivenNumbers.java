@@ -4,34 +4,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MaximumOfGivenNumbers {
+public class MaximumOfGivenNumbers <E extends Comparable>{
+    E firstValueToCompare;
+    E secondValueToCompare;
+    E thirdValueToCompare;
 
-/*
-    public static Integer checkMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
-        if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0) {
-            return firstNumber;
-        } else if (secondNumber.compareTo(thirdNumber) > 0) {
-            return secondNumber;
-        }
-        return thirdNumber;
+    public MaximumOfGivenNumbers(E firstValueToCompare, E secondValueToCompare, E thirdValueToCompare) {
+        this.firstValueToCompare = firstValueToCompare;
+        this.secondValueToCompare = secondValueToCompare;
+        this.thirdValueToCompare = thirdValueToCompare;
     }
 
-    public static Float checkMaximum(Float firstNumber, Float secondNumber, Float thirdNumber) {
-        if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0) {
-            return firstNumber;
-        } else if (secondNumber.compareTo(thirdNumber) > 0) {
-            return secondNumber;
-        }
-        return thirdNumber;
+    public <E extends Comparable> E checkMaximum() {
+        return (E) checkMaximum(firstValueToCompare,secondValueToCompare,thirdValueToCompare);
     }
-*/
 
-    public static<E extends Comparable<E>> E checkMaximum(E firstString, E secondString, E thirdString) {
-        if (firstString.compareTo(secondString) > 0 && firstString.compareTo(thirdString) > 0) {
-            return firstString;
-        } else if (secondString.compareTo(thirdString) > 0) {
-            return secondString;
+    public static<E extends Comparable> E checkMaximum(E firstValueToCompare, E secondValueToCompare, E thirdValueToCompare) {
+        if (firstValueToCompare.compareTo(secondValueToCompare) > 0 && firstValueToCompare.compareTo(thirdValueToCompare) > 0) {
+            return firstValueToCompare;
+        } else if (secondValueToCompare.compareTo(thirdValueToCompare) > 0) {
+            return secondValueToCompare;
         }
-        return thirdString;
+        return thirdValueToCompare;
     }
+
+
 }
