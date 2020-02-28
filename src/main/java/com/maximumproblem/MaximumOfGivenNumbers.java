@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MaximumOfGivenNumbers {
 
+/*
     public static Integer checkMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
         if (firstNumber.compareTo(secondNumber) > 0 && firstNumber.compareTo(thirdNumber) > 0) {
             return firstNumber;
@@ -23,8 +24,9 @@ public class MaximumOfGivenNumbers {
         }
         return thirdNumber;
     }
+*/
 
-    public static String checkMaximum(String firstString, String secondString, String thirdString) {
+    public static<E extends Comparable<E>> E checkMaximum(E firstString, E secondString, E thirdString) {
         if (firstString.compareTo(secondString) > 0 && firstString.compareTo(thirdString) > 0) {
             return firstString;
         } else if (secondString.compareTo(thirdString) > 0) {
