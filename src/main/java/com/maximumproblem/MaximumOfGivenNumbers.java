@@ -21,7 +21,6 @@ public class MaximumOfGivenNumbers<E extends Comparable> {
 
     public static <E extends Comparable> E checkMaximum(E firstValueToCompare, E secondValueToCompare, E thirdValueToCompare, E... extraParameters) {
         E maximumValue;
-        E arrayMaximumValue = null;
         if (firstValueToCompare.compareTo(secondValueToCompare) > 0 && firstValueToCompare.compareTo(thirdValueToCompare) > 0) {
             maximumValue = firstValueToCompare;
         } else if (secondValueToCompare.compareTo(thirdValueToCompare) > 0) {
@@ -33,9 +32,11 @@ public class MaximumOfGivenNumbers<E extends Comparable> {
             if (maximumValue.compareTo(extraParameters[0]) < 0)
                 maximumValue = extraParameters[0];
         }
+        printMaximumValue(maximumValue);
         return maximumValue;
-
     }
 
-
+    private static <E extends Comparable> void printMaximumValue(E maximumValue) {
+        System.out.println("Maximum value is "+maximumValue);
+    }
 }

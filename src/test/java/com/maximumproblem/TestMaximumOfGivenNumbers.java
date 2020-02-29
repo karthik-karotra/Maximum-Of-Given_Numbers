@@ -4,6 +4,7 @@ import org.junit.Test;
 
 public class TestMaximumOfGivenNumbers {
 
+    //Test Methods for finding maximum value in 3 integers
     @Test
     public void givenIntegers_WhenMaximumAtFirstPosition_ShouldReturnSameNumber() {
         Assert.assertSame(12, MaximumOfGivenNumbers.checkMaximum(12, 10, 3 ));
@@ -19,6 +20,7 @@ public class TestMaximumOfGivenNumbers {
         Assert.assertSame(12, MaximumOfGivenNumbers.checkMaximum(3, 10, 12 ));
     }
 
+    //Test Methods for finding maximum value in 3 floating value
     @Test
     public void givenFloatingIntegers_WhenMaximumAtFirstPosition_ShouldReturnSameNumber() {
         Assert.assertEquals(12.1f, MaximumOfGivenNumbers.checkMaximum(12.1f, 10.3f, 3.2f ),0.0f);
@@ -34,6 +36,7 @@ public class TestMaximumOfGivenNumbers {
         Assert.assertEquals(12.5f, MaximumOfGivenNumbers.checkMaximum(3.4f, 10.1f, 12.5f ),0.0f);
     }
 
+    //Test Methods for finding maximum value in 3 strings
     @Test
     public void givenStrings_WhenMaximumAtFirstPosition_ShouldReturnSameString() {
         Assert.assertEquals("Peach", MaximumOfGivenNumbers.checkMaximum("Peach","Apple","Banana"));
@@ -49,16 +52,39 @@ public class TestMaximumOfGivenNumbers {
         Assert.assertEquals("Peach", MaximumOfGivenNumbers.checkMaximum("Apple", "Banana", "Peach"));
     }
 
+    //Test Method for finding maximum value in integer values passed in constructor
+    @Test
+    public void givenIntegersInConstructor_ShouldReturnMaximumValue() {
+        Assert.assertSame(12, new MaximumOfGivenNumbers<>(12,10,9).checkMaximum());
+    }
+
+    //Test Method for finding maximum value in float values passed in constructor
+    @Test
+    public void givenFloatingNumbersInConstructor_ShouldReturnMaximumValue() {
+        Assert.assertEquals(12.1f, new MaximumOfGivenNumbers<>(12.1f, 10.3f, 3.2f).checkMaximum(),0.0f);
+    }
+
+    //Test Method for finding maximum value in string values passed in constructor
+    @Test
+    public void givenStringsInConstructor_ShouldReturnMaximumValue() {
+        Assert.assertEquals("Peach", new MaximumOfGivenNumbers("Peach","Apple","Banana").checkMaximum());
+    }
+
+
+
+    //Test Method for finding maximum value in multiple integers
     @Test
     public void givenMultipleIntegers_ShouldReturnMaximumValue() {
         Assert.assertSame(12, MaximumOfGivenNumbers.checkMaximum(12, 10, 3,4,9,7 ));
     }
 
+    //Test Method for finding maximum value in multiple float values
     @Test
     public void givenMultipleFloatingNumbers_ShouldReturnMaximumValue() {
         Assert.assertEquals(12.1f, MaximumOfGivenNumbers.checkMaximum(12.1f, 10.3f, 3.2f,1.1f,2.5f,4.8f),0.0f);
     }
 
+    //Test Method for finding maximum value in multiple strings
     @Test
     public void givenMultipleStrings_ShouldReturnMaximumValue() {
         Assert.assertEquals("Strawberry", MaximumOfGivenNumbers.checkMaximum("Peach","Apple","Banana","Mango","Pineapple","Strawberry"));
